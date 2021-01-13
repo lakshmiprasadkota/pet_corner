@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:pet_corner/screens/openscreen.dart';
+import 'package:pet_corner/screens/open_screen.dart';
 
 void main() {
   runApp(MyApp());
@@ -17,7 +17,7 @@ class _MyAppState extends State<MyApp> {
       debugShowCheckedModeBanner: false,
       title: 'Login Demo',
       theme: ThemeData(
-        primarySwatch: Colors.deepOrange,
+        primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       home: OpenScreen(),

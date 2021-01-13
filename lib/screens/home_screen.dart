@@ -8,16 +8,13 @@ class HomePage extends StatefulWidget {
   @override
   _HomePageState createState() => _HomePageState();
 }
-
 class _HomePageState extends State<HomePage> {
   GetAnimals animalsList = GetAnimals();
   Datum animalsIndex = Datum();
   String compareNames = "Cats";
   String name = " ";
   dynamic res;
-
   get selectedIndex => null;
-
   void getHttp() async {
     try {
       Response response =
@@ -35,14 +32,12 @@ class _HomePageState extends State<HomePage> {
       print(e);
     }
   }
-
   @override
   void initState() {
     getHttp();
     // TODO: implement initState
     super.initState();
   }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -143,7 +138,6 @@ class _HomePageState extends State<HomePage> {
                     child: Container(
                       margin: EdgeInsets.only(top: 250),
                       decoration: BoxDecoration(
-                        color: Colors.green,
                         shape: BoxShape.rectangle,
                         borderRadius: BorderRadius.only(
                             topRight: Radius.circular(30),
@@ -183,7 +177,6 @@ class _HomePageState extends State<HomePage> {
                                         ? Container()
                                         : ListView.separated(
                                             scrollDirection: Axis.horizontal,
-                                            primary: false,
                                             shrinkWrap: true,
                                             itemCount: animalsList.data.length,
                                             itemBuilder: (context, index) {
@@ -197,7 +190,7 @@ class _HomePageState extends State<HomePage> {
                                                     print("$animalsIndex");
                                                   });
                                                 },
-                                                child: Category(
+                                                child: AnimalTypes(
                                                   name: animalsList
                                                       .data[index].title,
                                                   compareName: compareNames,
@@ -240,7 +233,7 @@ class _HomePageState extends State<HomePage> {
                                                       .items[index].title;
                                                 });
                                               },
-                                              child: CategoryList(
+                                              child: AnimalsView(
                                                 name: animalsIndex
                                                     .items[index].title,
                                                 image: animalsIndex
@@ -278,12 +271,12 @@ class _HomePageState extends State<HomePage> {
         child: Container(
           padding: EdgeInsets.symmetric(horizontal: 23),
           decoration: BoxDecoration(
-              color: Color(0xFFFFFF),
+              color: Colors.white,
               borderRadius: BorderRadius.circular(10),
               boxShadow: [
                 BoxShadow(
-                    color: Color(0xff00000029),
-                    offset: Offset(0, 3),
+                    color: Color(0x333D015B),
+                    offset: Offset(0, -2),
                     blurRadius: 6)
               ]),
           height: 70,
@@ -324,17 +317,17 @@ class _HomePageState extends State<HomePage> {
   }
 }
 
-class Category extends StatefulWidget {
-  const Category({this.name, this.compareName});
+class AnimalTypes extends StatefulWidget {
+  const AnimalTypes({this.name, this.compareName});
 
   final String name;
   final String compareName;
 
   @override
-  _CategoryState createState() => _CategoryState();
+  _AnimalTypesState createState() => _AnimalTypesState();
 }
 
-class _CategoryState extends State<Category> {
+class _AnimalTypesState extends State<AnimalTypes> {
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -376,8 +369,8 @@ class _CategoryState extends State<Category> {
   }
 }
 
-class CategoryList extends StatefulWidget {
-  const CategoryList(
+class AnimalsView extends StatefulWidget {
+  const AnimalsView(
       {this.name,
       this.image,
       this.gender,
@@ -397,10 +390,10 @@ class CategoryList extends StatefulWidget {
   final String animalName;
 
   @override
-  _CategoryListState createState() => _CategoryListState();
+  _AnimalsViewState createState() => _AnimalsViewState();
 }
 
-class _CategoryListState extends State<CategoryList> {
+class _AnimalsViewState extends State<AnimalsView> {
   @override
   Widget build(BuildContext context) {
     return Column(
