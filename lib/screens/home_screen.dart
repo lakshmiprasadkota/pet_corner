@@ -41,230 +41,234 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      
       body: SafeArea(
-        child: Column(
-          children: [
-            Container(
-              child: Stack(
-                overflow: Overflow.visible,
-                children: [
-                  Container(
-                    height: 300,
-                    padding: EdgeInsets.symmetric(vertical: 23, horizontal: 23),
-                    decoration: BoxDecoration(
-                      image: DecorationImage(
-                        image: AssetImage("assets/images/home_bg.png"),
-                        fit: BoxFit.cover,
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              Container(
+                child: Stack(
+                  overflow: Overflow.visible,
+                  children: [
+                    Container(
+                      height: 300,
+                      padding: EdgeInsets.symmetric(vertical: 23, horizontal: 23),
+                      decoration: BoxDecoration(
+                        image: DecorationImage(
+                          image: AssetImage("assets/images/home_bg.png"),
+                          fit: BoxFit.cover,
+                        ),
+                        shape: BoxShape.rectangle,
+                        //color: Colors.blue,
                       ),
-                      shape: BoxShape.rectangle,
-                      //color: Colors.blue,
-                    ),
-                    child: Column(
-                      children: [
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Image.asset(
-                              "assets/images/menu.png",
-                              height: 18,
-                            ),
-                            Image.asset(
-                              "assets/images/user.png",
-                              height: 26,
-                            )
-                          ],
-                        ),
-                        SizedBox(
-                          height: 31,
-                        ),
-                        Container(
-                          alignment: Alignment.topLeft,
-                          child: Container(
-                            height: 52,
-                            width: 208,
-                            child: RichText(
-                              text: TextSpan(
-                                children: <TextSpan>[
-                                  TextSpan(
-                                      text: 'Hello, ',
-                                      style: TextStyle(
-                                          fontSize: 22,
-                                          color: Color(0xFFFFFFFF),
-                                          fontWeight: FontWeight.w400)),
-                                  TextSpan(
-                                      text: ' Anastasia',
-                                      style: TextStyle(
-                                          fontSize: 22,
-                                          color: Color(0xFFFFFFFF),
-                                          fontWeight: FontWeight.bold)),
-                                  TextSpan(
-                                      text: '  Welcome to Pet Corner',
-                                      style: TextStyle(
-                                          fontSize: 20,
-                                          color: Color(0xFFFFFFFF),
-                                          fontWeight: FontWeight.bold)),
-                                ],
+                      child: Column(
+                        children: [
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Image.asset(
+                                "assets/images/menu.png",
+                                height: 18,
+                              ),
+                              Image.asset(
+                                "assets/images/user.png",
+                                height: 26,
+                              )
+                            ],
+                          ),
+                          SizedBox(
+                            height: 31,
+                          ),
+                          Container(
+                            alignment: Alignment.topLeft,
+                            child: Container(
+                              height: 52,
+                              width: 208,
+                              child: RichText(
+                                text: TextSpan(
+                                  children: <TextSpan>[
+                                    TextSpan(
+                                        text: 'Hello, ',
+                                        style: TextStyle(
+                                            fontSize: 22,
+                                            color: Color(0xFFFFFFFF),
+                                            fontWeight: FontWeight.w400)),
+                                    TextSpan(
+                                        text: ' Anastasia',
+                                        style: TextStyle(
+                                            fontSize: 22,
+                                            color: Color(0xFFFFFFFF),
+                                            fontWeight: FontWeight.bold)),
+                                    TextSpan(
+                                        text: '  Welcome to Pet Corner',
+                                        style: TextStyle(
+                                            fontSize: 20,
+                                            color: Color(0xFFFFFFFF),
+                                            fontWeight: FontWeight.bold)),
+                                  ],
+                                ),
                               ),
                             ),
                           ),
-                        ),
-                        SizedBox(
-                          height: 18,
-                        ),
-                        TextField(
-                          decoration: InputDecoration(
-                              prefix: Image.asset(
-                                "assets/images/search.png",
-                                width: 20,
-                                height: 20,
-                              ),
-                              hintText: " Search pet",
-                              isDense: true,
-                              filled: true,
-                              fillColor: Colors.white,
-                              enabledBorder: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(15),
-                                  borderSide: BorderSide(
-                                      color: Colors.transparent, width: 2)),
-                              focusedBorder: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(15),
-                                  borderSide: BorderSide(
-                                      color: Colors.transparent, width: 2))),
-                        ),
-                      ],
-                    ),
-                  ),
-                  Positioned(
-                    child: Container(
-                      margin: EdgeInsets.only(top: 250),
-                      decoration: BoxDecoration(
-                        shape: BoxShape.rectangle,
-                        borderRadius: BorderRadius.only(
-                            topRight: Radius.circular(30),
-                            topLeft: Radius.circular(30)),
+                          SizedBox(
+                            height: 18,
+                          ),
+                          TextField(
+                            decoration: InputDecoration(
+                                prefix: Image.asset(
+                                  "assets/images/search.png",
+                                  width: 20,
+                                  height: 20,
+                                ),
+                                hintText: " Search pet",
+                                isDense: true,
+                                filled: true,
+                                fillColor: Colors.white,
+                                enabledBorder: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(15),
+                                    borderSide: BorderSide(
+                                        color: Colors.transparent, width: 2)),
+                                focusedBorder: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(15),
+                                    borderSide: BorderSide(
+                                        color: Colors.transparent, width: 2))),
+                          ),
+                        ],
                       ),
+                    ),
+                    Positioned(
                       child: Container(
-                        height: 500,
-                        width: double.infinity,
+                        height: 800,
+                        margin: EdgeInsets.only(top: 250),
                         decoration: BoxDecoration(
                           shape: BoxShape.rectangle,
                           borderRadius: BorderRadius.only(
                               topRight: Radius.circular(30),
                               topLeft: Radius.circular(30)),
-                          color: Color(0xFFFFFFFF),
                         ),
-                        child: Column(
-                          children: [
-                            Container(
-                              padding:
-                                  EdgeInsets.only(top: 25, right: 23, left: 23),
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text(
-                                    "Pet Category",
-                                    style: TextStyle(
-                                        color: Color(0xFF222222),
-                                        fontSize: 22,
-                                        fontWeight: FontWeight.bold),
-                                  ),
-                                  SizedBox(
-                                    height: 19,
-                                  ),
-                                  Container(
-                                    height: 50,
-                                    child: animalsList.data == null
-                                        ? Container()
-                                        : ListView.separated(
-                                            scrollDirection: Axis.horizontal,
+                        child: Container(
+                             height: 500,
+                          width: double.infinity,
+                          decoration: BoxDecoration(
+                            shape: BoxShape.rectangle,
+                            borderRadius: BorderRadius.only(
+                                topRight: Radius.circular(30),
+                                topLeft: Radius.circular(30)),
+                            color: Color(0xFFFFFFFF),
+                          ),
+                          child: Column(
+                            children: [
+                              Container(
+                                padding:
+                                    EdgeInsets.only(top: 25, right: 23, left: 23),
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text(
+                                      "Pet Category",
+                                      style: TextStyle(
+                                          color: Color(0xFF222222),
+                                          fontSize: 22,
+                                          fontWeight: FontWeight.bold),
+                                    ),
+                                    SizedBox(
+                                      height: 19,
+                                    ),
+                                    Container(
+                                      height: 50,
+                                      child: animalsList.data == null
+                                          ? Container()
+                                          : ListView.separated(
+                                              scrollDirection: Axis.horizontal,
+                                              shrinkWrap: true,
+                                              itemCount: animalsList.data.length,
+                                              itemBuilder: (context, index) {
+                                                return InkWell(
+                                                  onTap: () {
+                                                    setState(() {
+                                                      animalsIndex =
+                                                          animalsList.data[index];
+                                                      compareNames = animalsList
+                                                          .data[index].title;
+                                                      print("$animalsIndex");
+                                                    });
+                                                  },
+                                                  child: AnimalTypes(
+                                                    name: animalsList
+                                                        .data[index].title,
+                                                    compareName: compareNames,
+                                                  ),
+                                                );
+                                              },
+                                              separatorBuilder: (context, index) {
+                                                return SizedBox(
+                                                  width: 22,
+                                                );
+                                              }),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              SizedBox(
+                                height: 15,
+                              ),
+                              Expanded(
+                                child: Container(
+                                  color: Colors.white,
+                                  child: animalsIndex.items == null
+                                      ? Container(
+                                          height: 50,
+                                          width: 50,
+                                          child: Center(
+                                              child: CircularProgressIndicator()),
+                                        )
+                                      : Container(
+                                          padding: EdgeInsets.only(
+                                              right: 23, left: 23),
+                                          child: ListView.builder(
+                                            itemCount: animalsIndex.items.length,
                                             shrinkWrap: true,
-                                            itemCount: animalsList.data.length,
                                             itemBuilder: (context, index) {
                                               return InkWell(
                                                 onTap: () {
                                                   setState(() {
-                                                    animalsIndex =
-                                                        animalsList.data[index];
-                                                    compareNames = animalsList
-                                                        .data[index].title;
-                                                    print("$animalsIndex");
+                                                    name = animalsIndex
+                                                        .items[index].title;
                                                   });
                                                 },
-                                                child: AnimalTypes(
-                                                  name: animalsList
-                                                      .data[index].title,
-                                                  compareName: compareNames,
+                                                child: AnimalsView(
+                                                  name: animalsIndex
+                                                      .items[index].title,
+                                                  image: animalsIndex
+                                                      .items[index].image,
+                                                  subtitle: animalsIndex
+                                                      .items[index].subTitle,
+                                                  gender: animalsIndex
+                                                      .items[index].gender,
+                                                  months: animalsIndex
+                                                      .items[index].months,
+                                                  length: animalsIndex
+                                                      .items[index].length,
+                                                  distance: animalsIndex
+                                                      .items[index].distance,
+                                                  animalName: name,
                                                 ),
                                               );
                                             },
-                                            separatorBuilder: (context, index) {
-                                              return SizedBox(
-                                                width: 22,
-                                              );
-                                            }),
-                                  ),
-                                ],
-                              ),
-                            ),
-                            SizedBox(
-                              height: 15,
-                            ),
-                            Expanded(
-                              child: Container(
-                                color: Colors.white,
-                                child: animalsIndex.items == null
-                                    ? Container(
-                                        height: 50,
-                                        width: 50,
-                                        child: Center(
-                                            child: CircularProgressIndicator()),
-                                      )
-                                    : Container(
-                                        padding: EdgeInsets.only(
-                                            right: 23, left: 23),
-                                        child: ListView.builder(
-                                          itemCount: animalsIndex.items.length,
-                                          shrinkWrap: true,
-                                          itemBuilder: (context, index) {
-                                            return InkWell(
-                                              onTap: () {
-                                                setState(() {
-                                                  name = animalsIndex
-                                                      .items[index].title;
-                                                });
-                                              },
-                                              child: AnimalsView(
-                                                name: animalsIndex
-                                                    .items[index].title,
-                                                image: animalsIndex
-                                                    .items[index].image,
-                                                subtitle: animalsIndex
-                                                    .items[index].subTitle,
-                                                gender: animalsIndex
-                                                    .items[index].gender,
-                                                months: animalsIndex
-                                                    .items[index].months,
-                                                length: animalsIndex
-                                                    .items[index].length,
-                                                distance: animalsIndex
-                                                    .items[index].distance,
-                                                animalName: name,
-                                              ),
-                                            );
-                                          },
+                                          ),
                                         ),
-                                      ),
+                                ),
                               ),
-                            ),
-                          ],
+                            ],
+                          ),
                         ),
                       ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
       bottomNavigationBar: BottomAppBar(
